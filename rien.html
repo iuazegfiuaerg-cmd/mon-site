@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma Saint-Valentin, Myriam ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --rose-pale: #ffe4e1;
+            --rouge-passion: #e63946;
+            --rouge-sombre: #b91d2a;
+            --blanc: #ffffff;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #fce4ec 0%, #ffc10721 50%, #f8bbd0 100%);
+            font-family: 'Montserrat', sans-serif;
+            color: #444;
+            overflow-x: hidden;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            color: var(--rouge-passion);
+            margin-top: 20px;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .message-box {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+            line-height: 1.8;
+            margin-bottom: 30px;
+            border: 2px solid var(--rose-pale);
+            position: relative;
+        }
+
+        /* Cadre photo ajusté et réduit */
+        .memories-section {
+            background: white;
+            padding: 12px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin: 20px auto;
+            transform: rotate(-1.5deg);
+            max-width: 350px; /* Taille de l'image réduite ici */
+        }
+
+        .memory-image {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            display: block;
+        }
+
+        .memory-caption {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.4rem;
+            color: var(--rouge-passion);
+            margin-top: 12px;
+        }
+
+        .btn-love {
+            background: linear-gradient(45deg, var(--rouge-passion), var(--rouge-sombre));
+            color: white;
+            border: none;
+            padding: 18px 50px;
+            font-size: 1.4rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Dancing Script', cursive;
+            box-shadow: 0 10px 25px rgba(230, 57, 70, 0.4);
+            margin-top: 30px;
+        }
+
+        .btn-love:hover {
+            transform: scale(1.05) translateY(-3px);
+            box-shadow: 0 15px 30px rgba(230, 57, 70, 0.6);
+        }
+
+        .cursor-heart {
+            position: fixed;
+            pointer-events: none;
+            color: var(--rouge-passion);
+            font-size: 20px;
+            z-index: 9999;
+            user-select: none;
+        }
+
+        .footer {
+            margin-top: 60px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--rouge-passion);
+        }
+
+        .heart-rain {
+            position: fixed;
+            top: -10%;
+            font-size: 2rem;
+            animation: fall linear forwards;
+            z-index: 1000;
+        }
+
+        @keyframes fall {
+            to { transform: translateY(110vh) rotate(360deg); }
+        }
+
+        .highlight {
+            color: var(--rouge-passion);
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <p style="text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; margin-bottom: 0; opacity: 0.6;">14 Février 2026</p>
+        <h1>Joyeuse Saint-Valentin, Myriam</h1>
+
+        <div class="message-box">
+            <p>Ma précieuse <strong>Myriam</strong>,</p>
+            <p>
+                Aujourd'hui, pour notre Saint-Valentin, je voulais te dire à quel point tu es devenue le centre de mon monde. À 18 ans, notre amour a cette force brute et magnifique qui balaie tous les doutes. 
+            </p>
+            <p>
+                <span class="highlight">Sentir tes lèvres contre les miennes</span> est devenu mon refuge préféré. Je t'appartiens corps et âme, pour l'éternité.
+            </p>
+            <p style="font-family: 'Dancing Script'; font-size: 1.8rem; color: var(--rouge-passion);">Je t'aime plus que tout au monde.</p>
+        </div>
+
+        <div class="memories-section">
+            <img src="mymy.jpeg" alt="Notre souvenir" class="memory-image">
+            <div class="memory-caption">Toi et moi, pour toujours... ❤️</div>
+        </div>
+
+        <button class="btn-love" onclick="createHeartRain()">Touche mon cœur ❤️</button>
+
+        <div class="footer">
+            À ma future femme, pour l'éternité. 🌹
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('mousemove', function(e) {
+            if (Math.random() > 0.85) {
+                const heart = document.createElement('div');
+                heart.innerHTML = '❤️';
+                heart.classList.add('cursor-heart');
+                heart.style.left = e.clientX + 'px';
+                heart.style.top = e.clientY + 'px';
+                const moveX = (Math.random() - 0.5) * 80;
+                const moveY = (Math.random() - 0.5) * 80;
+                heart.animate([
+                    { opacity: 1, transform: 'translate(0, 0) scale(1)' },
+                    { opacity: 0, transform: `translate(${moveX}px, ${moveY}px) scale(0)` }
+                ], { duration: 1200, easing: 'ease-out' });
+                document.body.appendChild(heart);
+                setTimeout(() => heart.remove(), 1200);
+            }
+        });
+
+        function createHeartRain() {
+            const symbols = ['❤️', '💖', '💍', '✨', '🌹'];
+            for (let i = 0; i < 70; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.classList.add('heart-rain');
+                    heart.innerHTML = symbols[Math.floor(Math.random() * symbols.length)];
+                    heart.style.left = Math.random() * 100 + 'vw';
+                    heart.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                    document.body.appendChild(heart);
+                    setTimeout(() => heart.remove(), 4000);
+                }, i * 40);
+            }
+        }
+    </script>
+</body>
+</html>
